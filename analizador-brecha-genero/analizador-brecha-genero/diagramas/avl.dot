@@ -1,0 +1,8 @@
+digraph G { bgcolor=white; node [fontname="Helvetica", fontsize=12, shape=plaintext]; fontname="Helvetica";
+  label=<<B>Árbol AVL (NodoAVL)</B><BR/>factor de balance = altura(izq) - altura(der), siempre en {-1, 0, 1}>; labelloc=t;
+  r [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD COLSPAN="2">dato: Empleado (E008)</TD></TR><TR><TD COLSPAN="2" BGCOLOR="#eef3fb">altura: 4</TD></TR><TR><TD PORT="i" BGCOLOR="#eef3fb">izquierdo</TD><TD PORT="d" BGCOLOR="#eef3fb">derecho</TD></TR></TABLE>>];
+  a [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD COLSPAN="2">dato: E004</TD></TR><TR><TD COLSPAN="2" BGCOLOR="#eef3fb">altura: 3</TD></TR><TR><TD PORT="i" BGCOLOR="#eef3fb">izquierdo</TD><TD PORT="d" BGCOLOR="#eef3fb">derecho</TD></TR></TABLE>>];
+  b [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD COLSPAN="2">dato: E012</TD></TR><TR><TD COLSPAN="2" BGCOLOR="#eef3fb">altura: 3</TD></TR><TR><TD PORT="i" BGCOLOR="#eef3fb">izquierdo</TD><TD PORT="d" BGCOLOR="#eef3fb">derecho</TD></TR></TABLE>>];
+  r:i -> a; r:d -> b; a:i -> x1; a:d -> x2; b:i -> x3; b:d -> x4;
+  x1 [label="subárbol\n(claves < E004)"]; x2 [label="subárbol\n(E004 < claves < E008)"]; x3 [label="subárbol"]; x4 [label="subárbol"];
+}

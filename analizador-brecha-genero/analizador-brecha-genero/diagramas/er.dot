@@ -1,0 +1,16 @@
+graph G { rankdir=LR; bgcolor=white; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11, shape=plaintext]; edge [fontname="Helvetica", fontsize=10];
+label=<<B>Modelo entidad-relación</B>  (PK = llave primaria, FK = llave foránea, UK = única)>; labelloc=t; fontsize=15;
+O [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>ORGANIZACION</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>id_organizacion</U> PK<BR ALIGN="LEFT"/>nit UK<BR ALIGN="LEFT"/>razon_social<BR ALIGN="LEFT"/>ciudad<BR ALIGN="LEFT"/>sector<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+A [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>AREA</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>id_area</U> PK<BR ALIGN="LEFT"/>nombre<BR ALIGN="LEFT"/>id_organizacion FK<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+N [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>NIVEL_JERARQUICO</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>id_nivel</U> PK<BR ALIGN="LEFT"/>nombre UK<BR ALIGN="LEFT"/>orden UK (1-4)<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+C [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>CARGO</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>id_cargo</U> PK<BR ALIGN="LEFT"/>nombre<BR ALIGN="LEFT"/>id_area FK<BR ALIGN="LEFT"/>id_nivel FK<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+E [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>EMPLEADO</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>codigo_empleado</U> PK<BR ALIGN="LEFT"/>documento UK<BR ALIGN="LEFT"/>nombres<BR ALIGN="LEFT"/>apellidos<BR ALIGN="LEFT"/>sexo (F/M)<BR ALIGN="LEFT"/>fecha_ingreso<BR ALIGN="LEFT"/>id_cargo FK<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+H [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4"><TR><TD BGCOLOR="#1f5fa8"><FONT COLOR="white"><B>HISTORIAL_SALARIAL</B></FONT></TD></TR><TR><TD ALIGN="LEFT"><U>id_historial</U> PK<BR ALIGN="LEFT"/>codigo_empleado FK<BR ALIGN="LEFT"/>salario (&gt; 0)<BR ALIGN="LEFT"/>fecha_inicio<BR ALIGN="LEFT"/>fecha_fin (NULL = vigente)<BR ALIGN="LEFT"/></TD></TR></TABLE>>];
+node [shape=diamond, style=filled, fillcolor="#eef3fb", fontsize=10];
+r1 [label="tiene"]; r2 [label="agrupa"]; r3 [label="clasifica"]; r4 [label="ocupa"]; r5 [label="registra"];
+O -- r1 [label="1"]; r1 -- A [label="1..N"];
+A -- r2 [label="1"]; r2 -- C [label="0..N"];
+N -- r3 [label="1"]; r3 -- C [label="0..N"];
+C -- r4 [label="1"]; r4 -- E [label="0..N"];
+E -- r5 [label="1"]; r5 -- H [label="1..N"];
+}

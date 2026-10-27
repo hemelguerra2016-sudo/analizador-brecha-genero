@@ -1,0 +1,13 @@
+digraph G {
+  rankdir=LR; bgcolor=white; fontname="Helvetica"; node [fontname="Helvetica", fontsize=12, shape=plaintext];
+  label=<<B>Diagramas de nodo</B>>; labelloc=t; fontsize=16;
+  subgraph cluster_l { label=<<B>Lista doblemente enlazada (NodoDoble)</B>>; style=rounded; color="#888888";
+    cab [label="cabeza", fontcolor="#1f5fa8"]; col [label="cola", fontcolor="#1f5fa8"];
+    n1 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD PORT="a" BGCOLOR="#eef3fb">anterior</TD><TD>dato: Empleado<BR/>E001</TD><TD PORT="s" BGCOLOR="#eef3fb">siguiente</TD></TR></TABLE>>];
+    n2 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD PORT="a" BGCOLOR="#eef3fb">anterior</TD><TD>dato: Empleado<BR/>E002</TD><TD PORT="s" BGCOLOR="#eef3fb">siguiente</TD></TR></TABLE>>];
+    n3 [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="6"><TR><TD PORT="a" BGCOLOR="#eef3fb">anterior</TD><TD>dato: Empleado<BR/>E014</TD><TD PORT="s" BGCOLOR="#eef3fb">siguiente</TD></TR></TABLE>>];
+    nl1 [label="null"]; nl2 [label="null"];
+    nl1 -> n1:a [dir=back]; n1:s -> n2:a; n2:a -> n1:s; n2:s -> n3:a [label=" ... "]; n3:a -> n2:s; n3:s -> nl2;
+    cab -> n1; col -> n3;
+  }
+}

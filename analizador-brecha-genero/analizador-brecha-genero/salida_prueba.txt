@@ -1,0 +1,81 @@
+
+===== 1. CASOS BORDE CON ESTRUCTURAS VACIAS =====
+Buscar E001 en lista vacia   -> null
+Buscar E001 en AVL vacio     -> null
+Eliminar E001 en lista vacia -> false
+Recorrido de lista vacia:
+  (lista vacia)
+
+===== 2. INSERCION (el AVL por codigo rechaza duplicados) =====
+Insertar codigo duplicado E005 -> false
+Empleados en lista: 14 | en AVL: 14 | altura AVL: 4 (14 claves ordenadas: un BST simple tendria altura 14)
+
+===== 3. RECORRIDO HACIA ADELANTE (lista doble) =====
+  E001  Ana Perez         F  Auxiliar administrativa        N1  $    1,750,905
+  E002  Carlos Diaz       M  Auxiliar de bodega             N1  $    1,850,000
+  E003  Maria Gomez       F  Recepcionista                  N1  $    1,750,905
+  E004  Luis Torres       M  Operario de produccion         N1  $    1,900,000
+  E005  Laura Ruiz        F  Analista de datos              N2  $    4,200,000
+  E006  Jorge Castro      M  Analista de datos              N2  $    4,600,000
+  E007  Sofia Herrera     F  Contadora                      N2  $    4,500,000
+  E008  Andres Molina     M  Ingeniero de procesos          N2  $    4,800,000
+  E009  Paola Vargas      F  Coordinadora talento hum.      N3  $    7,000,000
+  E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+  E011  Ricardo Silva     M  Jefe de tecnologia             N3  $    8,800,000
+  E012  Claudia Mejia     F  Directora financiera           N4  $   15,000,000
+  E013  Fernando Ortiz    M  Gerente general                N4  $   22,761,765
+  E014  Javier Pineda     M  Director comercial             N4  $   16,500,000
+
+===== 4. RECORRIDO HACIA ATRAS (lista doble) =====
+  E014  Javier Pineda     M  Director comercial             N4  $   16,500,000
+  E013  Fernando Ortiz    M  Gerente general                N4  $   22,761,765
+  E012  Claudia Mejia     F  Directora financiera           N4  $   15,000,000
+  E011  Ricardo Silva     M  Jefe de tecnologia             N3  $    8,800,000
+  E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+  E009  Paola Vargas      F  Coordinadora talento hum.      N3  $    7,000,000
+  E008  Andres Molina     M  Ingeniero de procesos          N2  $    4,800,000
+  E007  Sofia Herrera     F  Contadora                      N2  $    4,500,000
+  E006  Jorge Castro      M  Analista de datos              N2  $    4,600,000
+  E005  Laura Ruiz        F  Analista de datos              N2  $    4,200,000
+  E004  Luis Torres       M  Operario de produccion         N1  $    1,900,000
+  E003  Maria Gomez       F  Recepcionista                  N1  $    1,750,905
+  E002  Carlos Diaz       M  Auxiliar de bodega             N1  $    1,850,000
+  E001  Ana Perez         F  Auxiliar administrativa        N1  $    1,750,905
+
+===== 5. RECORRIDO INORDEN DEL AVL POR SALARIO =====
+  E001  Ana Perez         F  Auxiliar administrativa        N1  $    1,750,905
+  E003  Maria Gomez       F  Recepcionista                  N1  $    1,750,905
+  E002  Carlos Diaz       M  Auxiliar de bodega             N1  $    1,850,000
+  E004  Luis Torres       M  Operario de produccion         N1  $    1,900,000
+  E005  Laura Ruiz        F  Analista de datos              N2  $    4,200,000
+  E007  Sofia Herrera     F  Contadora                      N2  $    4,500,000
+  E006  Jorge Castro      M  Analista de datos              N2  $    4,600,000
+  E008  Andres Molina     M  Ingeniero de procesos          N2  $    4,800,000
+  E009  Paola Vargas      F  Coordinadora talento hum.      N3  $    7,000,000
+  E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+  E011  Ricardo Silva     M  Jefe de tecnologia             N3  $    8,800,000
+  E012  Claudia Mejia     F  Directora financiera           N4  $   15,000,000
+  E014  Javier Pineda     M  Director comercial             N4  $   16,500,000
+  E013  Fernando Ortiz    M  Gerente general                N4  $   22,761,765
+
+===== 6. BUSQUEDA POR CODIGO =====
+AVL   E010 -> E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+Lista E010 -> E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+AVL   E999 (inexistente) -> null
+
+===== 7. CONSULTA POR RANGO SALARIAL $4.000.000 - $9.000.000 =====
+  E005  Laura Ruiz        F  Analista de datos              N2  $    4,200,000
+  E007  Sofia Herrera     F  Contadora                      N2  $    4,500,000
+  E006  Jorge Castro      M  Analista de datos              N2  $    4,600,000
+  E008  Andres Molina     M  Ingeniero de procesos          N2  $    4,800,000
+  E009  Paola Vargas      F  Coordinadora talento hum.      N3  $    7,000,000
+  E010  Diego Rojas       M  Jefe de produccion             N3  $    8,200,000
+  E011  Ricardo Silva     M  Jefe de tecnologia             N3  $    8,800,000
+Resultados: 7
+
+===== 8. INDICADORES DE EQUIDAD POR NIVEL =====
+Operativo            brecha:   6.62%   mujeres:  50.0%
+Profesional/Tecnico  brecha:   7.45%   mujeres:  50.0%
+Mando medio          brecha:  17.65%   mujeres:  33.3%
+Alta direccion       brecha:  23.59%   mujeres:  33.3%
+TOTAL                brecha:  34.30%   mujeres:  42.9%
